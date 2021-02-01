@@ -1,0 +1,22 @@
+{
+  "name": "randomimagepicker",
+  "version": "0.0.1",
+  "description": "a random image will be given to you, if there's one",
+  "main": "./lib/randomImagePicker.js",
+  "directories": {
+    "lib": "lib",
+   "bin": "bin"
+  },
+  "bin": {
+    "randomImagePicker": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "image"
+  ],
+  "author": "rf",
+  "license": "MIT"
+}
