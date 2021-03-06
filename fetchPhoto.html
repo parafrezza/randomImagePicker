@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+    </head>
+    <body style="background-color: black; text-align: center;">
+     <script>
+        let img   = document.createElement('img');
+        img.style = 'width:auto%;height:100%;';
+        document.body.append(img);
+
+        function putItThere()
+        {
+            try 
+            {
+                (async ()=>
+                {
+                    let response = await fetch("http://127.0.0.1:3001/pidv");
+                    let blob = await response.blob(); // download as Blob object
+                    // show it
+                    img.src = URL.createObjectURL(blob);
+                })()
+            }
+            catch (err) {
+                throw err
+            }
+            finally {
+                console.log('finalmente');
+            }
+        }
+        function handleKeyPres(event)
+        {
+            event.preventDefault();
+            if (event.keyCode == 32)
+            {
+                putItThere();
+            }
+        }
+        document.addEventListener("keypress", handleKeyPres, false);
+        putItThere();
+
+
+</script>
+</body>
+</html>
